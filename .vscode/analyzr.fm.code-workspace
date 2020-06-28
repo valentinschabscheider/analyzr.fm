@@ -10,13 +10,11 @@
     "editor.formatOnSave": true,
     "files.exclude": {
       "**/__pycache__": true,
-      "**/.gitignore": true,
-      "**/LICENSE": true,
-      "**/README.md": true,
-      "**/.vscode": true
+      "**/.gitignore": true
     },
     "search.exclude": {
-      "**/__pycache__": true
+      "**/__pycache__": true,
+      "**/.gitignore": true
     }
   }
 }
