@@ -1,0 +1,28 @@
+version: "3"
+services:
+  django:
+    container_name: analyzrfm-django
+    image: analyzrfm-django
+    restart: always
+    build:
+      context: .
+      dockerfile: django.Dockerfile
+    env_file:
+      - .env.development
+    volumes:
+      - ./backend:/usr/src/api
+    links:
+      - postgres
+    ports:
+      - "8000:8000"
+  postgres:
+    container_name: analyzrfm-postgres
+    image: postgres
+    restart: always
+    volumes:
+      - analyzrfm-postgres_data:/var/lib/postgresql/data
+    env_file:
+      - .env.development
+
+volumes:
+  analyzrfm-postgres_data:
